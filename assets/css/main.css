@@ -716,10 +716,10 @@ section,
   animation: fadeInDown 1s both;
   display: block;
   color: white;
-  padding: 120px;
+  padding: 100px;
   text-align: center;
   justify-content: center;
-  padding-top: 200px;
+  padding-top: 100px;
   margin: 0 0 0 0;
 }
 
@@ -745,7 +745,7 @@ section,
   line-height: 1;
   width: auto;
   height: auto;
-  padding-top: 70px;
+
 }
 
 .hero .btn-get-started {
