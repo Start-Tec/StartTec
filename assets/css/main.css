@@ -65,6 +65,7 @@
   scroll-behavior: smooth;
   --img-color: #1e4356;
   --red-color: #ff0000;
+  --amarelo-color: #a58608;
 
 
 }
@@ -673,9 +674,11 @@ section,
   display: flex;
   align-items: center;
   position: relative;
-  filter: brightness(55%);
+  filter: brightness(25%);
   object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
   border-radius: 0 0 50px 50px; /* Arredonda apenas o canto superior esquerdo e o inferior direito */
+  margin-left: 0;   /* Margem esquerda */
+  margin-right: 0;
 }
 
 
@@ -705,21 +708,19 @@ section,
   align-items: center;
   flex-direction: column;
   text-align: center;
-  /* background: rgba(0, 0, 0, 0.2);
-  border-radius: 5px 5px 5px 5px ;
-  padding: 10px; */
 }
 
 .hero h2 {
-  margin-bottom: 30px;
   font-size: 48px;
   font-weight: 700;
   animation: fadeInDown 1s both;
   display: block;
   color: white;
-  background: rgba(0, 0, 0, 0.04);
-  border-radius: 5px 5px 5px 5px;
-  padding: 10px;
+  padding: 120px;
+  text-align: center;
+  justify-content: center;
+  padding-top: 200px;
+  margin: 0 0 0 0;
 }
 
 .hero p {
@@ -744,6 +745,7 @@ section,
   line-height: 1;
   width: auto;
   height: auto;
+  padding-top: 70px;
 }
 
 .hero .btn-get-started {
@@ -791,9 +793,7 @@ section,
 
 
 @media (min-width: 1024px) {
-  .hero p {
-    width: 60%;
-  }
+
 
   .hero .carousel-control-prev,
   .hero .carousel-control-next {
@@ -804,8 +804,20 @@ section,
 @media (max-width: 768px),
 (max-height: 700px) {
   .hero h2 {
-    font-size: 28px;
+    font-size: 26px;
   }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    padding: 0;
+    margin-top: 0;    /* Margem superior */
+    margin-right: 0;  /* Margem direita */
+    margin-bottom: 0; /* Margem inferior */
+    margin-left: 0;   /* Margem esquerda */
+  }
+
+
 }
 
 @keyframes fadeInUp {
@@ -855,8 +867,8 @@ section,
   padding: 40px 30px;
   text-align: center;
   transition: 0.3s;
-  border-radius: 5px;
-  border: 1px solid transparent;
+  border-radius: 10px;
+  border: 0px solid transparent;
 }
 
 .featured-services .service-item .icon {
@@ -879,9 +891,10 @@ section,
 
 .featured-services .service-item h3 {
   font-weight: 700;
-  margin: 10px 0 15px 0;
+  margin: 10px 0 5px 0;
   font-size: 22px;
   color: var(--footertext-color);
+  text-align: center;
 }
 
 .featured-services .service-item p {
@@ -889,6 +902,7 @@ section,
   font-size: 14px;
   margin-bottom: 0;
   color: var(--footertext-color);
+  text-align: center;
 }
 
 .featured-services .service-item:hover {
@@ -1303,6 +1317,7 @@ section,
 .services .img {
   border-radius: 8px;
   overflow: hidden;
+  filter: brightness(35%);
 }
 
 .services .img img {
@@ -1310,7 +1325,7 @@ section,
 }
 
 .services .details {
-  background: color-mix(in srgb, var(--surface-color), transparent 5%);
+  background: color-mix(in srgb, var(--surface-color), transparent 45%);
   position: absolute;
   left: 20px;
   right: 20px;
@@ -1319,7 +1334,7 @@ section,
   transition: all ease-in-out 0.3s;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0 25px rgba(0, 0, 0, 1);
 }
 
 .services .details h3 {
@@ -1501,7 +1516,7 @@ section,
 }
 
 .blog-posts .title a:hover {
-  color: var(--red-color);
+  color: var(--amarelo-color);
 }
 
 .blog-posts .post-author-img {
@@ -1511,7 +1526,6 @@ section,
 }
 
 .blog-posts .post-author {
-  font-weight: 600;
   margin-bottom: 5px;
 }
 
@@ -1668,12 +1682,13 @@ form button:hover {
   margin-bottom: 20px;
 }
 
+
 .dica-container h3,
 .ferramenta-container h3 {
   font-size: 1.5em;
-  color: #0077cc;
+  color: #1e4356;
   margin-bottom: 15px;
-  border-bottom: 2px solid #0077cc;
+  border-bottom: 2px solid #1e4356;
   padding-bottom: 5px;
 }
 
@@ -1681,24 +1696,11 @@ form button:hover {
 .ferramenta-item {
   margin-top: 10px;
   padding: 15px;
-  background-color: #fff;
+  background-color: var(--red-color);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-.dica-item h4,
-.ferramenta-item h4 {
-  font-size: 1.2em;
-  color: #000000;
-  margin-bottom: 5px;
-}
-
-.dica-item p,
-.ferramenta-item p {
-  font-size: 1em;
-  color: #666;
-}
 
 /* Estilo geral para a seção de ferramentas */
 .ferramenta-container {
@@ -1753,7 +1755,7 @@ form button:hover {
 .ferramenta-item h4 {
   font-size: 20px;
   margin: 0 0 5px 0;
-  color: var(--background-color);
+  color: #1e4356;
   margin-bottom: 10px;
 }
 
@@ -1763,6 +1765,7 @@ form button:hover {
   font-size: 16px;
   color: #555;
   line-height: 1.6;
+  text-align: center;
 }
 
 /* Efeito hover nos itens */
@@ -1827,12 +1830,12 @@ form button:hover {
 }
 
 .ferramenta-extra p{
-  color: var(--background-color);
+  color: #1e4356;
 }
 .ferramenta-extra ul {
   list-style-type: disc;
   margin-left: 20px;
-  color: var(--background-color);
+  color: #1e4356;
 }
 
 .ferramenta-extra ul li {
